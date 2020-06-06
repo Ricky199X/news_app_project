@@ -10,10 +10,14 @@ import "materialize-css/dist/js/materialize.min.js";
 import "./Components/NavBar"
 import NavBar from './Components/NavBar';
 
+// Containers 
+import HomePage from './Containers/HomePage';
+
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <HomePage />
 
     </div>
   );
