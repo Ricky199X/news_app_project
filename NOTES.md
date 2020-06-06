@@ -20,7 +20,7 @@ Containers Folder: all of the page containers
 Components Folder: All of the individual components required for the app
 - Will be in subfolders for its associated containers 
 
-Navbar 
+Navbar - Ricky
 Trending Component
 Categories Components
 User Collection Component
