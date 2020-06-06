@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 // CSS Imports
 import "materialize-css/dist/css/materialize.min.css";
@@ -15,11 +16,14 @@ import HomePage from './Containers/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <HomePage />
-
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
