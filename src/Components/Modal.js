@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Form from './SignupForm'
 
 
 const Modal = (props) => {
@@ -8,10 +8,13 @@ const Modal = (props) => {
         return null
     }
     return (
+        // This will be a decision maker:
+        // If the button clicked is sign up, it'll render sign up form
+        // If the button clicked is login, it'll render login form 
         <div>
             <div className="container">
                 <div className="modal-content" href="#modal1">
-                    Insert Form Here
+                    <Form />
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react'
-import Modal from '../Containers/Modal'
-// import M from "materialize-css";
+import Modal from '../Components/Modal'
 
 class HomePage extends React.Component {
 
@@ -19,7 +18,6 @@ class HomePage extends React.Component {
 
 
     render() {
-        // console.log(this.state.show)
         return (
             <div>
                 <div className="container">
