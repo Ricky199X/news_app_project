@@ -1,79 +1,48 @@
 import React from 'react'
 import Modal from '../Containers/Modal'
-import M from "materialize-css";
+// import M from "materialize-css";
 
 class HomePage extends React.Component {
 
 
-    // state = {
-    //     show: false
-    // };
+    state = {
+        show: false
+    };
 
     // // function to change the state of the homepage component if the use clicks
     // //  sign up or log in - sets the show property to true, meaning we can show the modal
-    // showModal = () => {
-    //     this.setState({
-    //         show: true
-    //     });
-    // }
-
-    componentDidMount() {
-        const options = {
-            inDuration: 150,
-            outDuration: 150,
-            opacity: 0.5,
-            dismissible: false,
-            startingTop: "4%",
-            endingTop: "10%"
-        };
-        M.Modal.init(this.Modal, options);
+    showModal = () => {
+        this.setState({
+            show: true
+        });
     }
 
 
     render() {
         // console.log(this.state.show)
         return (
-            <div class="container">
-                <section class="greeting">
-                    <div>
-                        <h1>Landing Page</h1>
-                    </div>
-                </section>
+            <div>
+                <div className="container">
+                    <h1>Landing Page</h1>
 
-                <section class="links">
+                    <section className="actions">
+                        <button className="login btn modal-trigger"
+                            onClick={this.showModal}
+                        >
+                            Sign Up
+                            </button>
+                        <button className="signup btn modal-trigger"
+                            onClick={this.showModal}
+                        >
+                            Login
+                        </button>
 
-                    <a className="waves-effect waves-light btn modal-trigger"
-                        data-target="modal1"
-                    >
-                        Modal
-                    </a>
+                    </section>
 
-                    <div ref={Modal => {
-                        this.Modal = Modal;
-                    }}
-                        id="modal1"
-                        className="modal"
-                    >
+                    <Modal show={this.state.show} />
+                </div>
 
-                        <div className="modal-content">
-                            <h4>Modal Header</h4>
-                            <p>This is where the form will be</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#" class="modal-close waves-effect waves-red btn-flat">
-                                Disagree
-                            </a>
-                            <a href="#" class="modal-close waves-effect waves-green btn-flat">
-                                Agree
-                            </a>
-                        </div>
-                    </div>
-
-                </section>
-
-
-
-            </div>
+            </div >
         )
     }
 }
