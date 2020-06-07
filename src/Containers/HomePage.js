@@ -1,20 +1,46 @@
 import React from 'react'
+import Modal from '../Components/Modal'
 
 class HomePage extends React.Component {
+
+
+    state = {
+        show: false
+    };
+
+    // // function to change the state of the homepage component if the use clicks
+    // //  sign up or log in - sets the show property to true, meaning we can show the modal
+    showModal = () => {
+        this.setState({
+            show: true
+        });
+    }
+
+
     render() {
         return (
-            <div class="container">
-                <section class="greeting">
-                    <div>
-                        <h1>Landing Page</h1>
-                    </div>
-                </section>
+            <div>
+                <div className="container">
+                    <h1>Landing Page</h1>
 
-                <section class="links">
-                    <button class="btn signup">Sign Up</button>
-                    <button class="btn login">Log In</button>
-                </section>
-            </div>
+                    <section className="actions">
+                        <button className="login btn modal-trigger"
+                            onClick={this.showModal}
+                        >
+                            Sign Up
+                            </button>
+                        <button className="signup btn modal-trigger"
+                            onClick={this.showModal}
+                        >
+                            Login
+                        </button>
+
+                    </section>
+
+                    <Modal show={this.state.show} />
+                </div>
+
+            </div >
         )
     }
 }
