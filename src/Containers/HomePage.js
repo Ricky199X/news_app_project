@@ -3,16 +3,17 @@ import Modal from '../Components/Modal'
 
 class HomePage extends React.Component {
 
-
     state = {
-        show: false
+        show: false,
+        formType: ""
     };
 
-    // // function to change the state of the homepage component if the use clicks
-    // //  sign up or log in - sets the show property to true, meaning we can show the modal
-    showModal = () => {
+    // function to change the state of the homepage component if the user clicks
+    //  will track if the user has clicked an option, and add the appropriate type of form to render to the state
+    showModal = (event) => {
         this.setState({
-            show: true
+            show: true,
+            formType: event.target.innerText
         });
     }
 
@@ -24,20 +25,25 @@ class HomePage extends React.Component {
                     <h1>Landing Page</h1>
 
                     <section className="actions">
-                        <button className="login btn modal-trigger"
-                            onClick={this.showModal}
+                        <button className="signup btn modal-trigger"
+                            onClick={event => {
+                                this.showModal(event)
+                            }}
                         >
                             Sign Up
                             </button>
-                        <button className="signup btn modal-trigger"
-                            onClick={this.showModal}
+                        <button className="login btn modal-trigger"
+                            onClick={event => {
+                                this.showModal(event)
+                            }}
                         >
                             Login
                         </button>
 
                     </section>
 
-                    <Modal show={this.state.show} />
+                    {/* The updated state with the action to render the form + form type is passed down as props to the modal component */}
+                    <Modal show={this.state.show} formType={this.state.formType} />
                 </div>
 
             </div >

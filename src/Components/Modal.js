@@ -4,9 +4,11 @@ import Form from './SignupForm'
 
 const Modal = (props) => {
 
+    console.log(props)
     if (!props.show) {
         return null
     }
+
     return (
         // This will be a decision maker:
         // If the button clicked is sign up, it'll render sign up form
