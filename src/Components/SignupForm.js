@@ -13,8 +13,11 @@ class SignupForm extends React.Component {
         }
     }
 
-    componentDidMount() {
-        console.log(this.state)
+    // handle form changes
+    handleFormChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
 
