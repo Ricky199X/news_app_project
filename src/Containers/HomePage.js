@@ -51,15 +51,4 @@ class HomePage extends React.Component {
   }
 }
 
-<section class="links">
-  <button class="btn signup">Sign Up</button>
-  <button class="btn login" onClick={this.handleShowLogin}>
-    Log In
-          </button>
-</section>
-      </div >
-    );
-  }
-}
-
 export default HomePage;
