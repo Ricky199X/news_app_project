@@ -1,44 +1,63 @@
-import React from "react";
+import React from 'react'
+import Modal from '../Components/Modal'
 
 class HomePage extends React.Component {
+
   state = {
-    modalShown: false,
+    show: false,
+    formType: ""
   };
 
-  handleShowLogin = () => {
-    this.setState({ modalShown: true });
-  };
+  // function to change the state of the homepage component if the user clicks
+  //  will track if the user has clicked an option, and add the appropriate type of form to render to the state
+  showModal = (event) => {
+    this.setState({
+      show: true,
+      formType: event.target.innerText
+    });
+  }
+
 
   render() {
     return (
-      <div class="container">
-        <section class="greeting">
-          <div>
-            <h1>Landing Page</h1>
-            {/* temporary modal for login UNFINISHEDDDDDD */}
-            {this.state.modalShown ? (
-              <div id="login-form">
-                <div class="modal-content">
-                  <button onClick={() => this.setState({ modalShown: false })}>X</button>
-                  <h4>LOG IN!!!!!!!!!</h4>
-                  <form style={{ maxWidth: "50%", margin: "auto" }}>
-                    <input type="text" placeholder="user?" />
-                    <input type="password" placeholder="password" />
-                    <input type="submit" value="Login" />
-                  </form>
-                </div>
-              </div>
-            ) : null}
-          </div>
-        </section>
+      <div>
+        <div className="container">
+          <h1>Landing Page</h1>
 
-        <section class="links">
-          <button class="btn signup">Sign Up</button>
-          <button class="btn login" onClick={this.handleShowLogin}>
-            Log In
+          <section className="actions">
+            <button className="signup btn modal-trigger"
+              onClick={event => {
+                this.showModal(event)
+              }}
+            >
+              Sign Up
+                            </button>
+            <button className="login btn modal-trigger"
+              onClick={event => {
+                this.showModal(event)
+              }}
+            >
+              Login
+                        </button>
+
+          </section>
+
+          {/* The updated state with the action to render the form + form type is passed down as props to the modal component */}
+          <Modal show={this.state.show} formType={this.state.formType} />
+        </div>
+
+      </div >
+    )
+  }
+}
+
+<section class="links">
+  <button class="btn signup">Sign Up</button>
+  <button class="btn login" onClick={this.handleShowLogin}>
+    Log In
           </button>
-        </section>
-      </div>
+</section>
+      </div >
     );
   }
 }
