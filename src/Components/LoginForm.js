@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
 
     constructor(props) {
         super(props)
@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
                 <section class="section form-section">
                     <div class="row">
                         <form class="col s12 l12" onSubmit={this.handleSubmit} >
-                            <label>Please Make a Username:</label>
+                            <label>Username:</label>
 
 
                             <input
@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
                                 value={this.state.username}
                             />
 
-                            <label>Please Enter Your Email Address:</label>
+                            <label>Email Address:</label>
                             <input
                                 onChange={this.handleFormChange}
                                 type='text'
@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
                                 value={this.state.email}
                             />
 
-                            <label>Choose a Password:</label>
+                            <label>Password:</label>
                             <input
                                 onChange={this.handleFormChange}
                                 type='password'
@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
                 <section class="section button-section center">
                     <button class="btn-large"
                         onClick={this.handleSubmit}>
-                        Sign Up!
+                        Log In!
                   </button>
                 </section>
 
@@ -71,4 +71,4 @@ class SignupForm extends React.Component {
 
 
 
-export default SignupForm
+export default LoginForm

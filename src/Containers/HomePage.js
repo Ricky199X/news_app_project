@@ -31,14 +31,14 @@ class HomePage extends React.Component {
               }}
             >
               Sign Up
-                            </button>
+            </button>
             <button className="login btn modal-trigger"
               onClick={event => {
                 this.showModal(event)
               }}
             >
               Login
-                        </button>
+            </button>
 
           </section>
 
