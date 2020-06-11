@@ -17,6 +17,7 @@ import Account from "./Containers/Account";
 import DashboardPage from "./Containers/DashboardPage";
 import StoriesPage from "./Containers/StoriesPage";
 import FavoritesPage from "./Containers/FavoritesPage";
+import NoMatch from "./Containers/NoMatch";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/stories" component={StoriesPage} />
           <Route path="/favorites" component={FavoritesPage} />
           <Route path="/account" component={Account} />
+          <Route component={NoMatch} />
         </Switch>
       </div>
     </Router>
