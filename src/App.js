@@ -13,6 +13,7 @@ import NavBar from './Components/NavBar';
 
 // Containers 
 import HomePage from './Containers/HomePage';
+import Account from './Containers/Account'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/' component={HomePage} />
+          <Route exact path='/account' component={Account} />
         </Switch>
       </div>
     </Router>
