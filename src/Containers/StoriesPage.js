@@ -8,22 +8,25 @@ const StoriesPage = () => {
   // test fetch
   const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
   const [stories, setStories] = useState([]);
-
   const fetchTopHeadlines = async () => {
     const res = await fetch(url);
     const data = await res.json();
-    setStories(data);
-    console.log(data);
+    if (!data.status === "ok") return;
+    console.log(`Found ${data.totalResults} articles`);
+    console.log(data.articles);
+    setStories(data.articles);
   };
 
   useEffect(() => {
     fetchTopHeadlines();
   }, []);
 
+  const testJson = JSON.stringify(stories, null, 2);
+
   return (
     <div>
       <h1>stories</h1>
-      <pre>{JSON.stringify(stories)}</pre>
+      <pre>{testJson}</pre>
     </div>
   );
 };
