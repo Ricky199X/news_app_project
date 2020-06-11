@@ -1,5 +1,6 @@
 import React from 'react'
-import Form from './SignupForm'
+import SignupForm from './SignupForm'
+import LoginForm from './LoginForm'
 
 
 const Modal = (props) => {
@@ -9,18 +10,30 @@ const Modal = (props) => {
         return null
     }
 
-    return (
-        // This will be a decision maker:
-        // If the button clicked is sign up, it'll render sign up form
-        // If the button clicked is login, it'll render login form 
-        <div>
-            <div className="container">
-                <div className="modal-content" href="#modal1">
-                    <Form />
+    // This will be a decision maker:
+    // If the button clicked is sign up, it'll render sign up form
+    // If the button clicked is login, it'll render login form
+    return props.formType === "LOGIN" ?
+
+        (
+            <div>
+                <div className="container">
+                    <div className="modal-content" href="#modal1">
+                        <LoginForm />
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+        :
+        (
+            <div>
+                <div className="container">
+                    <div className="modal-content" href="#modal1">
+                        <SignupForm />
+                    </div>
+                </div>
+            </div>
+        )
 }
 
 
