@@ -10,6 +10,7 @@ import "materialize-css/dist/js/materialize.min.js";
 // Components
 import "./Components/NavBar";
 import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
 // Containers
 import HomePage from "./Containers/HomePage";
@@ -18,6 +19,7 @@ import DashboardPage from "./Containers/DashboardPage";
 import StoriesPage from "./Containers/StoriesPage";
 import FavoritesPage from "./Containers/FavoritesPage";
 import NoMatch from "./Containers/NoMatch";
+
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
           <Route path="/account" component={Account} />
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
